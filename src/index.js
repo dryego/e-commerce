@@ -1,3 +1,5 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
+require("dotenv").config();
 const express = require("express");
 const teste = require("./controller/teste");
 
@@ -7,4 +9,4 @@ app.use(express.json());
 
 app.use("/teste", teste);
 
-app.listen(3000, console.log("Servidor inicializado..."));
+app.listen(process.env.PORT, console.log("Servidor inicializado..."));
